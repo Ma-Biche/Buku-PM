@@ -24547,7 +24547,6 @@ Salam hangat,
         });
         syncToggleAnswersState();
       });
-      document.getElementById("btn-print").addEventListener("click", () => window.print());
 
       // 7. Mobile Sidebar Drawer + TOC Search Filter
       const sidebar = document.getElementById("toc-sidebar");
@@ -24600,19 +24599,50 @@ Salam hangat,
         headings.forEach((h) => obs.observe(h));
       }
 
-      // 9. Initialize KaTeX Math Rendering
-      if (window.renderMathInElement) {
-        window.renderMathInElement(document.getElementById("main-content"), {
-          delimiters: [
-            { left: "$$", right: "$$", display: true },
-            { left: "$", right: "$", display: false }
-          ],
-          throwOnError: false,
-          ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"]
-        });
+      // 9. Progressive Lazy KaTeX Rendering per Chapter (instant initial load)
+      const katexOpts = {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false }
+        ],
+        throwOnError: false,
+        ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      };
+      function renderChapterMath(chap) {
+        if (!window.renderMathInElement || chap.dataset.mathDone === "1") return;
+        chap.dataset.mathDone = "1";
+        window.renderMathInElement(chap, katexOpts);
+      }
+      const chapters = Array.from(document.querySelectorAll(".book-chapter"));
+      if ("IntersectionObserver" in window && window.renderMathInElement) {
+        const mathObs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                renderChapterMath(entry.target);
+                mathObs.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: "1200px 0px" }
+        );
+        chapters.forEach((c) => mathObs.observe(c));
+      } else {
+        chapters.forEach(renderChapterMath);
       }
 
-      // 10. Initialize Mermaid Diagrams
+      // 10. Progressive Lazy Mermaid Rendering (non-blocking UI + full render before Print)
+      let mermaidQueue = Promise.resolve();
+      function renderMermaidNode(el) {
+        if (!window.mermaid || el.dataset.mermaidDone === "1") return Promise.resolve();
+        el.dataset.mermaidDone = "1";
+        mermaidQueue = mermaidQueue.then(() =>
+          window.mermaid.run({ nodes: [el] }).catch((err) => {
+            console.error("Mermaid render error:", err);
+          })
+        );
+        return mermaidQueue;
+      }
       if (window.mermaid) {
         window.mermaid.initialize({
           startOnLoad: false,
@@ -24621,10 +24651,43 @@ Salam hangat,
           flowchart: { useMaxWidth: true, htmlLabels: true },
           gantt: { useMaxWidth: true }
         });
-        window.mermaid.run({ querySelector: ".mermaid" }).catch((err) => {
-          console.error("Mermaid render error:", err);
-        });
+        const mermaidNodes = Array.from(document.querySelectorAll(".mermaid"));
+        if ("IntersectionObserver" in window) {
+          const mObs = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  renderMermaidNode(entry.target);
+                  mObs.unobserve(entry.target);
+                }
+              });
+            },
+            { rootMargin: "1200px 0px" }
+          );
+          mermaidNodes.forEach((node) => mObs.observe(node));
+        } else {
+          mermaidNodes.forEach(renderMermaidNode);
+        }
       }
+
+      // Print button ensures all remaining math & Mermaid diagrams render before window.print()
+      const printBtn = document.getElementById("btn-print");
+      printBtn.addEventListener("click", async () => {
+        const origLabel = printBtn.textContent;
+        printBtn.textContent = "Menyiapkan PDF…";
+        printBtn.disabled = true;
+        try {
+          chapters.forEach(renderChapterMath);
+          const pending = Array.from(document.querySelectorAll('.mermaid:not([data-mermaid-done="1"])'));
+          for (const node of pending) {
+            await renderMermaidNode(node);
+          }
+        } finally {
+          printBtn.textContent = origLabel;
+          printBtn.disabled = false;
+        }
+        window.print();
+      });
     });
   </script>
 </body>
