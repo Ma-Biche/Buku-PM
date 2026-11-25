@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Risk Matrix 5x5 dan Power-Interest Stakeholder Grid Proyek OMNI">
+  <defs>
+    <style>
+      .bg { fill: #faf8f4; }
+      .card { fill: #ffffff; stroke: #d8d1c5; stroke-width: 2; }
+      .title { font: 800 30px "Segoe UI", system-ui, sans-serif; fill: #0f2540; letter-spacing: 0.5px; }
+      .axis { font: 700 15px "Segoe UI", system-ui, sans-serif; fill: #526071; letter-spacing: 1.5px; }
+      .lbl { font: 700 15px "Segoe UI", system-ui, sans-serif; fill: #0f2540; }
+      .sub { font: 600 13px "Segoe UI", system-ui, sans-serif; fill: #526071; }
+      .pin-txt { font: 800 13px "Segoe UI", system-ui, sans-serif; fill: #0f2540; text-anchor: middle; }
+      .q-title { font: 800 18px "Segoe UI", system-ui, sans-serif; text-anchor: middle; }
+      .q-sub { font: 600 13px "Segoe UI", system-ui, sans-serif; fill: #334155; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1280" height="720" class="bg"/>
+  <line x1="640" y1="60" x2="640" y2="660" stroke="#dfd8cc" stroke-width="2"/>
+
+  <!-- LEFT PANEL: 5x5 RISK MATRIX -->
+  <text x="330" y="76" text-anchor="middle" class="title">RISK MATRIX (P × I)</text>
+  <rect x="75" y="106" width="510" height="534" rx="16" class="card"/>
+  <text x="108" y="370" text-anchor="middle" transform="rotate(-90 108 370)" class="axis">PROBABILITY (1–5)</text>
+  <text x="355" y="618" text-anchor="middle" class="axis">IMPACT (1–5)</text>
+
+  <!-- 5x5 Heatmap Cells (origin x=150, y=145, cell=78x78, gap=4) -->
+  <!-- Row 5 (Top - Very High Prob) -->
+  <rect x="150" y="145" width="76" height="76" rx="6" fill="#fef08a"/>
+  <rect x="232" y="145" width="76" height="76" rx="6" fill="#fdba74"/>
+  <rect x="314" y="145" width="76" height="76" rx="6" fill="#f87171"/>
+  <rect x="396" y="145" width="76" height="76" rx="6" fill="#b91c1c"/>
+  <rect x="478" y="145" width="76" height="76" rx="6" fill="#8c2f1b"/>
+  <!-- Row 4 -->
+  <rect x="150" y="227" width="76" height="76" rx="6" fill="#bbf7d0"/>
+  <rect x="232" y="227" width="76" height="76" rx="6" fill="#fef08a"/>
+  <rect x="314" y="227" width="76" height="76" rx="6" fill="#fdba74"/>
+  <rect x="396" y="227" width="76" height="76" rx="6" fill="#ef4444"/>
+  <rect x="478" y="227" width="76" height="76" rx="6" fill="#b91c1c"/>
+  <!-- Row 3 -->
+  <rect x="150" y="309" width="76" height="76" rx="6" fill="#86efac"/>
+  <rect x="232" y="309" width="76" height="76" rx="6" fill="#bbf7d0"/>
+  <rect x="314" y="309" width="76" height="76" rx="6" fill="#fef08a"/>
+  <rect x="396" y="309" width="76" height="76" rx="6" fill="#fb923c"/>
+  <rect x="478" y="309" width="76" height="76" rx="6" fill="#ef4444"/>
+  <!-- Row 2 -->
+  <rect x="150" y="391" width="76" height="76" rx="6" fill="#4ade80"/>
+  <rect x="232" y="391" width="76" height="76" rx="6" fill="#86efac"/>
+  <rect x="314" y="391" width="76" height="76" rx="6" fill="#bbf7d0"/>
+  <rect x="396" y="391" width="76" height="76" rx="6" fill="#fef08a"/>
+  <rect x="478" y="391" width="76" height="76" rx="6" fill="#fb923c"/>
+  <!-- Row 1 (Bottom) -->
+  <rect x="150" y="473" width="76" height="76" rx="6" fill="#22c55e" opacity="0.72"/>
+  <rect x="232" y="473" width="76" height="76" rx="6" fill="#4ade80"/>
+  <rect x="314" y="473" width="76" height="76" rx="6" fill="#86efac"/>
+  <rect x="396" y="473" width="76" height="76" rx="6" fill="#bbf7d0"/>
+  <rect x="478" y="473" width="76" height="76" rx="6" fill="#fef08a"/>
+
+  <!-- Axis ticks -->
+  <text x="136" y="188" text-anchor="end" class="sub">5</text>
+  <text x="136" y="270" text-anchor="end" class="sub">4</text>
+  <text x="136" y="352" text-anchor="end" class="sub">3</text>
+  <text x="136" y="434" text-anchor="end" class="sub">2</text>
+  <text x="136" y="516" text-anchor="end" class="sub">1</text>
+  <text x="188" y="576" text-anchor="middle" class="sub">1</text>
+  <text x="270" y="576" text-anchor="middle" class="sub">2</text>
+  <text x="352" y="576" text-anchor="middle" class="sub">3</text>
+  <text x="434" y="576" text-anchor="middle" class="sub">4</text>
+  <text x="516" y="576" text-anchor="middle" class="sub">5</text>
+
+  <!-- Risk Pins (Proyek OMNI R-01, R-02, R-03, R-05) -->
+  <circle cx="516" cy="265" r="24" fill="#ffffff" stroke="#0f2540" stroke-width="3"/>
+  <text x="516" y="270" class="pin-txt">R-01</text>
+  <circle cx="434" cy="183" r="24" fill="#ffffff" stroke="#0f2540" stroke-width="3"/>
+  <text x="434" y="188" class="pin-txt">R-02</text>
+  <circle cx="434" cy="265" r="24" fill="#ffffff" stroke="#0f2540" stroke-width="3"/>
+  <text x="434" y="270" class="pin-txt">R-03</text>
+  <circle cx="516" cy="347" r="24" fill="#ffffff" stroke="#0f2540" stroke-width="3"/>
+  <text x="516" y="352" class="pin-txt">R-05</text>
+
+  <!-- RIGHT PANEL: POWER-INTEREST STAKEHOLDER GRID -->
+  <text x="950" y="76" text-anchor="middle" class="title">STAKEHOLDER GRID</text>
+  <rect x="695" y="106" width="510" height="534" rx="16" class="card"/>
+  <text x="728" y="370" text-anchor="middle" transform="rotate(-90 728 370)" class="axis">POWER / INFLUENCE</text>
+  <text x="965" y="618" text-anchor="middle" class="axis">INTEREST IN PROJECT</text>
+
+  <!-- 4 Quadrants (x=765..1175, y=145..555) -->
+  <!-- Top-Left: Keep Satisfied -->
+  <rect x="765" y="145" width="198" height="198" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <text x="864" y="198" class="q-title" fill="#92400e">KEEP SATISFIED</text>
+  <text x="864" y="232" class="q-sub">High Power • Low Interest</text>
+  <rect x="795" y="256" width="138" height="30" rx="15" fill="#ffffff" stroke="#d97706"/>
+  <text x="864" y="276" class="pin-txt">CFO • Legal (UU PDP)</text>
+  <text x="864" y="316" class="q-sub">Update ringkas &amp; patuh</text>
+
+  <!-- Top-Right: Manage Closely -->
+  <rect x="975" y="145" width="198" height="198" rx="12" fill="#fee2e2" stroke="#8c2f1b" stroke-width="2.5"/>
+  <text x="1074" y="198" class="q-title" fill="#8c2f1b">MANAGE CLOSELY</text>
+  <text x="1074" y="232" class="q-sub">High Power • High Interest</text>
+  <rect x="998" y="256" width="152" height="30" rx="15" fill="#ffffff" stroke="#8c2f1b"/>
+  <text x="1074" y="276" class="pin-txt">CEO • COO • CTO • Ops</text>
+  <text x="1074" y="316" class="q-sub">Kolaborasi intensif &amp; aktif</text>
+
+  <!-- Bottom-Left: Monitor -->
+  <rect x="765" y="355" width="198" height="198" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+  <text x="864" y="408" class="q-title" fill="#334155">MONITOR</text>
+  <text x="864" y="442" class="q-sub">Low Power • Low Interest</text>
+  <rect x="802" y="466" width="124" height="30" rx="15" fill="#ffffff" stroke="#64748b"/>
+  <text x="864" y="486" class="pin-txt">Vendor Pendukung</text>
+  <text x="864" y="526" class="q-sub">Pantau periodik efisien</text>
+
+  <!-- Bottom-Right: Keep Informed -->
+  <rect x="975" y="355" width="198" height="198" rx="12" fill="#ccfbf1" stroke="#0f766e" stroke-width="2.5"/>
+  <text x="1074" y="408" class="q-title" fill="#0f766e">KEEP INFORMED</text>
+  <text x="1074" y="442" class="q-sub">Low Power • High Interest</text>
+  <rect x="996" y="466" width="156" height="30" rx="15" fill="#ffffff" stroke="#0f766e"/>
+  <text x="1074" y="486" class="pin-txt">120 Store Mgr &amp; Tim</text>
+  <text x="1074" y="526" class="q-sub">Komunikasi rutin &amp; pelatihan</text>
+
+  <!-- Axis Arrows -->
+  <line x1="752" y1="560" x2="752" y2="140" stroke="#0f2540" stroke-width="2.5"/>
+  <polygon points="752,130 746,144 758,144" fill="#0f2540"/>
+  <line x1="752" y1="560" x2="1178" y2="560" stroke="#0f2540" stroke-width="2.5"/>
+  <polygon points="1188,560 1174,554 1174,566" fill="#0f2540"/>
+</svg>

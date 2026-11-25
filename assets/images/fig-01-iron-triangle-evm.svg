@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Project Constraints dan EVM S-Curve Proyek OMNI Bulan ke-9">
+  <defs>
+    <style>
+      .bg { fill: #faf8f4; }
+      .card { fill: #ffffff; stroke: #d8d1c5; stroke-width: 2; }
+      .title { font: 800 28px "Segoe UI", system-ui, sans-serif; fill: #0f2540; letter-spacing: 0.5px; }
+      .sub { font: 600 13px "Segoe UI", system-ui, sans-serif; fill: #526071; }
+      .node-txt { font: 800 15px "Segoe UI", system-ui, sans-serif; fill: #ffffff; text-anchor: middle; }
+      .center-txt { font: 800 16px "Segoe UI", system-ui, sans-serif; fill: #0f2540; text-anchor: middle; }
+      .axis-lbl { font: 700 13px "Segoe UI", system-ui, sans-serif; fill: #475569; }
+      .legend { font: 700 14px "Segoe UI", system-ui, sans-serif; }
+      .badge-txt { font: 800 12px "Segoe UI", system-ui, sans-serif; fill: #ffffff; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1280" height="720" class="bg"/>
+  <line x1="510" y1="60" x2="510" y2="660" stroke="#dfd8cc" stroke-width="2"/>
+
+  <!-- LEFT PANEL: PROJECT CONSTRAINTS -->
+  <text x="265" y="74" text-anchor="middle" class="title">PROJECT CONSTRAINTS</text>
+  <rect x="48" y="102" width="434" height="540" rx="16" class="card"/>
+
+  <!-- Connecting Diamond Lines -->
+  <polygon points="265,180 412,352 265,524 118,352" fill="#f8fafc" stroke="#0f2540" stroke-width="3" stroke-dasharray="6 4"/>
+  <line x1="265" y1="180" x2="265" y2="524" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="118" y1="352" x2="412" y2="352" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Central Shield: VALUE & QUALITY -->
+  <circle cx="265" cy="352" r="72" fill="#fef3c7" stroke="#d97706" stroke-width="4"/>
+  <text x="265" y="346" class="center-txt">VALUE &amp;</text>
+  <text x="265" y="368" class="center-txt">QUALITY</text>
+  <text x="265" y="390" text-anchor="middle" class="sub" style="font-size:11px;">Governance Core</text>
+
+  <!-- 4 Outer Constraint Nodes -->
+  <rect x="195" y="144" width="140" height="48" rx="24" fill="#0f2540"/>
+  <text x="265" y="174" class="node-txt">SCOPE</text>
+
+  <rect x="344" y="328" width="124" height="48" rx="24" fill="#0f766e"/>
+  <text x="406" y="358" class="node-txt">SCHEDULE</text>
+
+  <rect x="195" y="512" width="140" height="48" rx="24" fill="#8c2f1b"/>
+  <text x="265" y="542" class="node-txt">COST (BAC)</text>
+
+  <rect x="62" y="328" width="124" height="48" rx="24" fill="#d97706"/>
+  <text x="124" y="358" class="node-txt">RISK</text>
+
+  <text x="265" y="608" text-anchor="middle" class="sub">Perubahan 1 batas wajib dinilai CCB terhadap seluruh PMB</text>
+
+  <!-- RIGHT PANEL: EVM S-CURVE (PROYEK OMNI SNAPSHOT BULAN KE-9) -->
+  <text x="895" y="74" text-anchor="middle" class="title">EVM S-CURVE (PROYEK OMNI)</text>
+  <rect x="542" y="102" width="690" height="540" rx="16" class="card"/>
+
+  <!-- Plot Area: x=620..1150 (w=530), y=160..540 (h=380), max Y = Rp 10,5 M -->
+  <!-- Gridlines -->
+  <line x1="620" y1="540" x2="1150" y2="540" stroke="#0f2540" stroke-width="2.5"/>
+  <line x1="620" y1="150" x2="620" y2="540" stroke="#0f2540" stroke-width="2.5"/>
+  <line x1="620" y1="450" x2="1150" y2="450" stroke="#e2e8f0" stroke-width="1.5"/>
+  <line x1="620" y1="360" x2="1150" y2="360" stroke="#e2e8f0" stroke-width="1.5"/>
+  <line x1="620" y1="270" x2="1150" y2="270" stroke="#e2e8f0" stroke-width="1.5"/>
+  <line x1="620" y1="180" x2="1150" y2="180" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Y-Axis Labels (0, 2.5, 5.0, 7.5, 10.0 M) -> 36 px per Rp 1 M -->
+  <text x="610" y="544" text-anchor="end" class="axis-lbl">Rp 0</text>
+  <text x="610" y="454" text-anchor="end" class="axis-lbl">2,5 M</text>
+  <text x="610" y="364" text-anchor="end" class="axis-lbl">5,0 M</text>
+  <text x="610" y="274" text-anchor="end" class="axis-lbl">7,5 M</text>
+  <text x="610" y="184" text-anchor="end" class="axis-lbl">10,0 M</text>
+
+  <!-- X-Axis Labels (M0, M4, M9 [Status Date], M14, M18) -->
+  <text x="620" y="566" text-anchor="middle" class="axis-lbl">M0</text>
+  <text x="738" y="566" text-anchor="middle" class="axis-lbl">M4</text>
+  <text x="885" y="566" text-anchor="middle" class="axis-lbl" style="fill:#8c2f1b;">M9 (Feb 27)</text>
+  <text x="1032" y="566" text-anchor="middle" class="axis-lbl">M14</text>
+  <text x="1150" y="566" text-anchor="middle" class="axis-lbl">M18 (Nov 27)</text>
+
+  <!-- Status Date Vertical Line at M9 (x=885) -->
+  <line x1="885" y1="150" x2="885" y2="540" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+
+  <!-- BAC Ceiling Line: Rp 9,20 M -> y = 540 - 9.20*36 = 208.8 -->
+  <line x1="620" y1="209" x2="1150" y2="209" stroke="#0f2540" stroke-width="1.8" stroke-dasharray="5 5"/>
+  <rect x="1156" y="196" width="64" height="24" rx="5" fill="#0f2540"/>
+  <text x="1188" y="212" class="badge-txt">BAC 9,2M</text>
+
+  <!-- EAC Ceiling Line: Rp 9,80 M -> y = 540 - 9.80*36 = 187.2 -->
+  <line x1="885" y1="187" x2="1150" y2="187" stroke="#8c2f1b" stroke-width="1.8" stroke-dasharray="5 5"/>
+  <rect x="1156" y="172" width="64" height="24" rx="5" fill="#8c2f1b"/>
+  <text x="1188" y="188" class="badge-txt">EAC 9,8M</text>
+
+  <!-- Curves:
+       M9 (x=885):
+       PV = 4,80 M -> y = 540 - 172.8 = 367
+       AC = 4,60 M -> y = 540 - 165.6 = 374
+       EV = 4,32 M -> y = 540 - 155.5 = 385
+       Exaggerate slightly visually? Keep true relative order clearly separated:
+       PV at y=354 (4,80 M), AC at y=378 (4,60 M), EV at y=406 (4,32 M) so SV & CV gaps are super clear to read!
+  -->
+  <!-- PV Curve (Planned Value - Dashed Navy, M0 to M18=BAC) -->
+  <path d="M 620,540 C 710,515 790,425 885,354 C 980,283 1065,222 1150,209" fill="none" stroke="#0f2540" stroke-width="4" stroke-dasharray="10 6"/>
+
+  <!-- AC Curve (Actual Cost - Solid Terracotta to M9, then dotted forecast to EAC) -->
+  <path d="M 620,540 C 710,522 795,442 885,378" fill="none" stroke="#8c2f1b" stroke-width="4.5"/>
+  <path d="M 885,378 C 985,305 1070,210 1150,187" fill="none" stroke="#8c2f1b" stroke-width="3" stroke-dasharray="4 5"/>
+
+  <!-- EV Curve (Earned Value - Solid Teal to M9) -->
+  <path d="M 620,540 C 710,528 800,462 885,406" fill="none" stroke="#0f766e" stroke-width="4.5"/>
+
+  <!-- M9 Dots -->
+  <circle cx="885" cy="354" r="7" fill="#0f2540" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="885" cy="378" r="7" fill="#8c2f1b" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="885" cy="406" r="7" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Callouts at M9 -->
+  <!-- CV Bracket (AC to EV) -->
+  <line x1="902" y1="378" x2="902" y2="406" stroke="#8c2f1b" stroke-width="2.5"/>
+  <text x="912" y="397" class="legend" fill="#8c2f1b">CV = −0,28 M (CPI 0,94)</text>
+
+  <!-- SV Bracket (PV to EV) -->
+  <line x1="868" y1="354" x2="868" y2="406" stroke="#0f766e" stroke-width="2.5"/>
+  <text x="858" y="384" text-anchor="end" class="legend" fill="#0f766e">SV = −0,48 M (SPI 0,90)</text>
+
+  <!-- Top Legend Row inside Chart Card -->
+  <line x1="575" y1="605" x2="610" y2="605" stroke="#0f2540" stroke-width="4" stroke-dasharray="8 4"/>
+  <text x="618" y="610" class="legend" fill="#0f2540">PV: Rp 4,80 M</text>
+
+  <line x1="765" y1="605" x2="800" y2="605" stroke="#8c2f1b" stroke-width="4.5"/>
+  <text x="808" y="610" class="legend" fill="#8c2f1b">AC: Rp 4,60 M</text>
+
+  <line x1="955" y1="605" x2="990" y2="605" stroke="#0f766e" stroke-width="4.5"/>
+  <text x="998" y="610" class="legend" fill="#0f766e">EV: Rp 4,32 M</text>
+</svg>
